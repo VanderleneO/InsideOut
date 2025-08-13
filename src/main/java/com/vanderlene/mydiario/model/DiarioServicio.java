@@ -2,6 +2,7 @@ package com.vanderlene.mydiario.model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class DiarioServicio {
     private List<Momento> momentos;
@@ -20,6 +21,11 @@ public class DiarioServicio {
       public boolean eliminarMomentoPorId(int id) { 
         return momentos.removeIf(m -> m.getId() == id);
     }
+      public List<Momento> filtrarPorEmocion(Emocion emocion) {
+        return momentos.stream()
+                .filter(m -> m.getEmocion() == emocion)
+                .collect(Collectors.toList());
+    } 
 }
 
 

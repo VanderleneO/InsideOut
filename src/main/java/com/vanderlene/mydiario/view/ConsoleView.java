@@ -3,8 +3,10 @@ package com.vanderlene.mydiario.view;
 import java.util.List;
 import java.util.Scanner;
 
+import com.vanderlene.mydiario.model.Emocion;
+
 public class ConsoleView {
-    private Scanner scanner = new Scanner(System.in);
+    private final Scanner scanner = new Scanner(System.in);
 
     public void mostrarMensaje(String mensaje) {
         System.out.println(mensaje);
@@ -15,9 +17,21 @@ public class ConsoleView {
             System.out.println(momento);
         }
     }
-     public int leerEntero(String mensaje) { 
-        System.out.print(mensaje);
-        return Integer.parseInt(scanner.nextLine());
+
+    public Emocion leerEmocion(String mensaje) {
+        mostrarMensaje(mensaje);
+        for (Emocion e : Emocion.values()) {
+            System.out.println("- " + e);
+        }
+        String entrada = scanner.nextLine().toUpperCase();
+        try {
+            return Emocion.valueOf(entrada);
+        } catch (IllegalArgumentException e) {
+            mostrarMensaje("Emoción no válida, intenta de nuevo.");
+            return leerEmocion(mensaje);
+        }
     }
 }
+
+
 
