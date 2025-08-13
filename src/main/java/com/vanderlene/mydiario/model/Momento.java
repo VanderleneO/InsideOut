@@ -29,7 +29,18 @@ public class Momento {
     public String getDescripcion() { return descripcion; }
     public Emocion getEmocion() { return emocion; }
     public LocalDate getFechaMomento() { return fechaMomento; }
+
+    @Override
+    public String toString() {
+        return "ID: " + id +
+               ", Fecha: " + fechaMomento +
+               ", Título: " + titulo +
+               ", Descripción: " + descripcion +
+               ", Emoción: " + emocion;
+    }
 }
+
+
 
 
 
