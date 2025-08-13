@@ -47,7 +47,14 @@ public class ConsoleView {
             }
         }
     }
+
+    public String leerTexto(String mensaje) {
+        System.out.print(mensaje);
+        return scanner.nextLine();
+    }
 }
+
+
 
 
 
