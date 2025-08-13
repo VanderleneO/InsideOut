@@ -1,5 +1,6 @@
 package com.vanderlene.mydiario.model;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -26,6 +27,13 @@ public class DiarioServicio {
                 .filter(m -> m.getEmocion() == emocion)
                 .collect(Collectors.toList());
     } 
+
+   public List<Momento> filtrarPorFecha(LocalDate fecha) {
+        return momentos.stream()
+                       .filter(momento -> momento.getFechaMomento().equals(fecha))
+                       .collect(Collectors.toList());
+    }
+
 }
 
 

@@ -1,5 +1,8 @@
 package com.vanderlene.mydiario.view;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -7,6 +10,7 @@ import com.vanderlene.mydiario.model.Emocion;
 
 public class ConsoleView {
     private final Scanner scanner = new Scanner(System.in);
+    private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
     public void mostrarMensaje(String mensaje) {
         System.out.println(mensaje);
@@ -29,6 +33,18 @@ public class ConsoleView {
         } catch (IllegalArgumentException e) {
             mostrarMensaje("Emoción no válida, intenta de nuevo.");
             return leerEmocion(mensaje);
+        }
+    }
+
+    public LocalDate leerFecha(String mensaje) {
+        while (true) {
+            System.out.print(mensaje);
+            String fechaStr = scanner.nextLine();
+            try {
+                return LocalDate.parse(fechaStr, formatter);
+            } catch (DateTimeParseException e) {
+                System.out.println("Formato inválido. Use dd/MM/yyyy");
+            }
         }
     }
 }
