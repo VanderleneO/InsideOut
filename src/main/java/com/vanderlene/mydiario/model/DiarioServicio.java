@@ -13,4 +13,7 @@ public class DiarioServicio {
     public void agregarMomento(Momento momento) {
         momentos.add(momento);
     }
+     public List<Momento> getMomentos() {
+        return momentos;
+}
 }
