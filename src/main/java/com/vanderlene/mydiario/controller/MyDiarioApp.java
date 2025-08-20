@@ -3,8 +3,6 @@ package com.vanderlene.mydiario.controller;
 import java.time.LocalDate;
 
 import com.vanderlene.mydiario.model.DiarioServicio;
-import com.vanderlene.mydiario.model.Emocion;
-import com.vanderlene.mydiario.model.Momento;
 import com.vanderlene.mydiario.view.ConsoleView;
 
 public class MyDiarioApp {
@@ -13,17 +11,6 @@ public class MyDiarioApp {
 
     public static void main(String[] args) {
 
-        
-        diarioServicio.agregarMomento(
-            new Momento("Cumpleaños", "Fui a una fiesta", Emocion.ALEGRIA, LocalDate.now())
-        );
-
-      
-        Emocion emocion = view.leerEmocion("Ingrese la emoción para filtrar: ");
-        view.mostrarMensaje("Momentos con emoción " + emocion + ":");
-        view.mostrarMomentos(diarioServicio.filtrarPorEmocion(emocion));
-
-       
         LocalDate fechaFiltro = view.leerFecha("Ingrese la fecha a filtrar (dd/MM/yyyy): ");
         view.mostrarMensaje("Momentos en la fecha " + fechaFiltro + ":");
         view.mostrarMomentos(diarioServicio.filtrarPorFecha(fechaFiltro));
