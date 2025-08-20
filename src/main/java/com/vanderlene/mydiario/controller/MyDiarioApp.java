@@ -2,7 +2,7 @@ package com.vanderlene.mydiario.controller;
 
 import com.vanderlene.mydiario.view.ConsoleView;
 
-public class MyDiarioApp {
+public class myDiarioApp {
     private static ConsoleView view = new ConsoleView();
 
     public static void main(String[] args) {
