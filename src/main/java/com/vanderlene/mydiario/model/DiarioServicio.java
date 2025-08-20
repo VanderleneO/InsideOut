@@ -17,9 +17,8 @@ public class DiarioServicio {
     public List<Momento> obtenerTodosLosMomentos() {
         return new ArrayList<>(momentos);
     }
-      public boolean eliminarMomentoPorId(int id) { 
+
+    public boolean eliminarMomentoPorId(int id) {
         return momentos.removeIf(m -> m.getId() == id);
     }
 }
-
-
