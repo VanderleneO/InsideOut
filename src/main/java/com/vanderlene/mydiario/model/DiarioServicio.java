@@ -11,18 +11,6 @@ public class DiarioServicio {
     public DiarioServicio() {
         this.momentos = new ArrayList<>();
     }
-
-    public void agregarMomento(Momento momento) {
-        momentos.add(momento);
-    }
-
-    public List<Momento> obtenerTodosLosMomentos() {
-        return new ArrayList<>(momentos);
-    }
-    
-    public boolean eliminarMomentoPorId(int id) { 
-        return momentos.removeIf(m -> m.getId() == id);
-    }
     
     public List<Momento> filtrarPorEmocion(Emocion emocion) {
         return momentos.stream()
