@@ -11,7 +11,10 @@ public class DiarioServicio {
     public DiarioServicio() {
         this.momentos = new ArrayList<>();
     }
-    
+     public void agregarMomento(Momento momento) {
+        this.momentos.add(momento);
+    }
+
     public List<Momento> filtrarPorEmocion(Emocion emocion) {
         return momentos.stream()
                 .filter(m -> m.getEmocion() == emocion)
