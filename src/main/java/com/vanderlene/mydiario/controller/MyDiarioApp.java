@@ -1,18 +1,19 @@
 package com.vanderlene.mydiario.controller;
 
-import java.time.LocalDate;
-
-import com.vanderlene.mydiario.model.DiarioServicio;
 import com.vanderlene.mydiario.view.ConsoleView;
 
 public class MyDiarioApp {
-        private static DiarioServicio diarioServicio = new DiarioServicio();
-        private static ConsoleView view = new ConsoleView();
+    private static ConsoleView view = new ConsoleView();
 
-        public static void main(String[] args) {
+    public static void main(String[] args) {
+        view.mostrarMensaje("Bienvenido a Mi Diario");
 
-                LocalDate fechaFiltro = view.leerFecha("Ingrese la fecha a filtrar (dd/MM/yyyy): ");
-                view.mostrarMensaje("Momentos en la fecha " + fechaFiltro + ":");
-                view.mostrarMomentos(diarioServicio.filtrarPorFecha(fechaFiltro));
+        String opcion = "";
+        while (!opcion.equalsIgnoreCase("salir")) {
+            opcion = view.leerTexto("Escriba 'salir' para cerrar la aplicación: ");
         }
+
+        view.mostrarMensaje("Aplicación cerrada. ¡Hasta luego!");
+    }
+
 }

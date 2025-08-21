@@ -1,90 +1,86 @@
-# 📌 Mi Primer Proyecto Java
 
-## 📝 Descripción
-Este proyecto es una aplicación Java de consola desarrollada siguiendo la metodología ágil **Scrum**, organizada en 6 **historias de usuario**.  
-El sistema simula el flujo básico de interacción de un usuario con la aplicación, abarcando desde el **inicio de sesión** hasta la **salida segura**, pasando por distintas funcionalidades específicas.
+-----
 
-### Historias de usuario implementadas:
-1. **Inicio de sesión** – Permite autenticar al usuario con credenciales predefinidas.
-2. **Registro de usuario** – Posibilita agregar nuevos usuarios al sistema.
-3. **Visualización de información** – Muestra datos almacenados en el sistema.
-4. **Gestión de datos** – Permite modificar o eliminar información.
-5. **Funcionalidad especial** – Característica particular definida en el proyecto.
-6. **Salir de la aplicación** – Finaliza la ejecución de forma controlada.
+### Título
 
----
+# 📖 Mi Diario de Momentos
 
-## ⚙️ Pre-requisitos
-Antes de ejecutar el proyecto, asegúrate de tener instalado:
-- **Java JDK** 17 o superior
-- **Apache Maven** (para gestión y compilación del proyecto)
-- Un **IDE** compatible como IntelliJ IDEA, Eclipse o VS Code con extensión de Java
-- **Git** para clonar el repositorio
+ 
+### 🚀 Sinopsis
 
-> Verifica tu instalación de Java:
-```bash
-java -version
+Una sencilla pero poderosa aplicación de consola para capturar y gestionar los momentos más importantes de tu vida junto con las emociones que los acompañan. Desarrollada con Java, sigue el patrón de diseño **Modelo-Vista-Controlador (MVC)** para una arquitectura limpia y organizada.
 
-📥 Pasos para la instalación
-
-Clona este repositorio desde GitHub:
-
-git clone https://github.com/tu-usuario/mi-primer-proyecto-java.git
+-----
 
 
-Ingresa a la carpeta del proyecto:
+### 💡 Sobre el Proyecto
 
-cd mi-primer-proyecto-java
+Este proyecto fue creado como una herramienta personal para llevar un registro de experiencias diarias. La implementación del patrón MVC fue una decisión clave para separar la lógica de negocio (Modelo) de la interfaz de usuario (Vista) y la gestión del flujo de la aplicación (Controlador). Esto facilita el mantenimiento y la escalabilidad del código.
 
-
-(Si usas Maven) Compila e instala dependencias:
-
-mvn clean install
-
-▶️ Ejecución de la aplicación
-
-Para ejecutar desde línea de comandos:
-
-java -jar target/mi-primer-proyecto.jar
+### 🛠️ Empezando
 
 
-O bien, desde tu IDE, ejecuta la clase principal con el método main().
+🛠️ Pre-requisitos
+Para ejecutar este proyecto, asegúrate de tener instalados los siguientes programas en tu sistema:
 
-✅ Ejecución de los tests
+[![Java](https://img.shields.io/badge/language-Java-orange.svg)](https://www.java.com/)
 
-El proyecto incluye pruebas unitarias para validar las funcionalidades de cada historia de usuario.
+[![Maven](https://img.shields.io/badge/Apache%20Maven-C71A36?style=flat-square&logo=Apache-Maven&logoColor=white)](https://maven.apache.org/)
 
-Para ejecutarlas:
+<br/>
 
-mvn test
+#### Instalación
+
+Sigue estos sencillos pasos para clonar el repositorio y compilar el proyecto:
+
+1.  Clona el repositorio desde la terminal:
+    ```bash
+    git clone https://www.youtube.com/watch?v=3fn7ApOWE1k
+    ```
+2.  Navega al directorio del proyecto:
+    ```bash
+    cd mi-primer-proyecto
+    ```
+3.  Compila y empaqueta la aplicación con Maven:
+    ```bash
+    mvn clean install
+    ```
+    Esto creará un archivo `.jar` en la carpeta `target/`.
+
+### 📂 Estructura del Proyecto
+
+El proyecto sigue una estructura de paquetes clara, en línea con el patrón MVC:
+
+```
+.
+├── src/main/java/com/vanderlene/mydiario/
+│   ├── controller/
+│   │   └── MyDiarioApp.java      
+│   ├── model/
+│   │   ├── Emocion.java          
+│   │   ├── Momento.java          
+│   │   └── DiarioServicio.java      
+│   └── view/
+│       └── ConsoleView.java   
+├── pom.xml                       
+└── README.md
+```
 
 
-Para ver el reporte de cobertura de código (usando JaCoCo):
+### 🤝 Contribuyendo
 
-Genera el reporte:
+¡Las contribuciones son bienvenidas\! Si deseas mejorar el proyecto, por favor:
 
-mvn jacoco:report
+1.  Haz un "fork" del repositorio.
+2.  Crea una nueva rama (`git checkout -b feature/nueva-funcionalidad`).
+3.  Haz tus cambios y haz "commit" (`git commit -am 'feat: Añade nueva funcionalidad'`).
+4.  Empuja la rama a tu repositorio (`git push origin feature/nueva-funcionalidad`).
+5.  Abre un "Pull Request".
 
+### ✒️ Autores
 
-Abre el archivo:
+  * **Vanderlene Oliveira** - Creador y mantenedor - ([GitHub]([https://github.com/VanderleneO]))
 
-target/site/jacoco/index.html
+### ⚖️ Licencia
 
-
-📊 Diagramas realizados
-
-Los siguientes diagramas documentan la estructura y el flujo de la aplicación:
-
-Diagrama de clases UML
-
-
-Diagrama de casos de uso
-
-
-Diagrama de secuencia
-
-
-👥 Autores
-
-Colaborador/a Dublin Rios
-Colaborador/a Vanderlene Oliveira 
+Este proyecto está bajo la Licencia MIT - mira el archivo [LICENSE.md](https://www.google.com/search?q=https://github.com/git/git-scm.com/blob/main/MIT-LICENSE.txt) para más detalles.
