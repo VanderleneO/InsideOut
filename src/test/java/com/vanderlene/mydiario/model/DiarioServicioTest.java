@@ -1,22 +1,28 @@
 package com.vanderlene.mydiario.model;
 
-import java.time.LocalDate;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import org.junit.jupiter.api.DisplayName;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
 
-class DiarioServicioTest {
+public class DiarioServicioTest {
 
     @Test
-    @DisplayName("1️⃣ Este test debe agregar un Momento a mi Lista de Momentos")
-    void testAgregarMomento() {
+    void testObtenerTodosLosMomentos() {
 
-        DiarioServicio servicio = new DiarioServicio();
-        Momento miMomento = new Momento("mi momento test", "mi primero test", Emocion.ALEGRIA ,LocalDate.now() );
+        DiarioServicio diario = new DiarioServicio();
 
-        servicio.agregarMomento(miMomento);
+        Momento momento1 = new Momento("Primer momento");
+        Momento momento2 = new Momento("Segundo momento");
 
-        assertEquals(1, servicio.getMomentos().size(), "El tamaño de la lista debe ser 1 después de agregar un elemento.");
-}
+        diario.agregarMomento(momento1);
+        diario.agregarMomento(momento2);
+
+        List<Momento> momentosObtenidos = diario.obtenerTodosLosMomentos();
+
+        assertEquals(2, momentosObtenidos.size(), "La lista debe tener 2 momentos.");
+        assertTrue(momentosObtenidos.contains(momento1), "La lista debe contener el momento 1.");
+        assertTrue(momentosObtenidos.contains(momento2), "La lista debe contener el momento 2.");
+    }
 }
