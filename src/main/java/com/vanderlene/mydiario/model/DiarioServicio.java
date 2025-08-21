@@ -1,7 +1,9 @@
 package com.vanderlene.mydiario.model;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class DiarioServicio {
     private List<Momento> momentos;
@@ -11,10 +13,18 @@ public class DiarioServicio {
     }
 
     public void agregarMomento(Momento momento) {
-        momentos.add(momento);
+        this.momentos.add(momento);
     }
 
-    public List<Momento> obtenerTodosLosMomentos() {
-        return new ArrayList<>(momentos);
+    public List<Momento> filtrarPorEmocion(Emocion emocion) {
+        return momentos.stream()
+                .filter(m -> m.getEmocion() == emocion)
+                .collect(Collectors.toList());
+    }
+
+    public List<Momento> filtrarPorFecha(LocalDate fecha) {
+        return momentos.stream()
+                .filter(m -> m.getFechaMomento().isEqual(fecha))
+                .collect(Collectors.toList());
     }
 }
