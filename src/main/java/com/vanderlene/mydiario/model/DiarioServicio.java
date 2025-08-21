@@ -12,19 +12,9 @@ public class DiarioServicio {
         this.momentos = new ArrayList<>();
     }
 
-    public void agregarMomento(Momento momento) {
-        this.momentos.add(momento);
-    }
-
-    public List<Momento> filtrarPorEmocion(Emocion emocion) {
-        return momentos.stream()
-                .filter(m -> m.getEmocion() == emocion)
-                .collect(Collectors.toList());
-    }
-
     public List<Momento> filtrarPorFecha(LocalDate fecha) {
         return momentos.stream()
-                .filter(m -> m.getFechaMomento().isEqual(fecha))
+                .filter(momento -> momento.getFechaMomento().equals(fecha))
                 .collect(Collectors.toList());
     }
 }
