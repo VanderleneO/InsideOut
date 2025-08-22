@@ -1,26 +1,51 @@
 package com.vanderlene.mydiario.model;
 
-public class Momento {
-    private String titulo;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
-    public Momento(String titulo) {
+public class Momento {
+    private static int contadorId = 0;
+
+    private final int id;
+    private String titulo;
+    private String descripcion;
+    private Emocion emocion;
+    private final LocalDate fechaMomento;
+    private final LocalDateTime fechaCreacion;
+    private LocalDateTime fechaModificacion;
+
+    public Momento(String titulo, String descripcion, Emocion emocion, LocalDate fechaMomento) {
+        this.id = ++contadorId;
         this.titulo = titulo;
+        this.descripcion = descripcion;
+        this.emocion = emocion;
+        this.fechaMomento = fechaMomento;
+        this.fechaCreacion = LocalDateTime.now();
+        this.fechaModificacion = LocalDateTime.now();
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getTitulo() {
         return titulo;
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null || getClass() != obj.getClass()) return false;
-        Momento momento = (Momento) obj;
-        return titulo.equals(momento.titulo);
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public Emocion getEmocion() {
+        return emocion;
+    }
+
+    public LocalDate getFechaMomento() {
+        return fechaMomento;
     }
 
     @Override
-    public int hashCode() {
-        return titulo.hashCode();
+    public String toString() {
+        return "Título: " + titulo + ", Emoción: " + emocion + ", Fecha: " + fechaMomento;
     }
 }
