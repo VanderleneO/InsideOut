@@ -24,18 +24,28 @@ public class Momento {
         this.fechaModificacion = LocalDateTime.now();
     }
 
-    public int getId() { return id; }
-    public String getTitulo() { return titulo; }
-    public String getDescripcion() { return descripcion; }
-    public Emocion getEmocion() { return emocion; }
-    public LocalDate getFechaMomento() { return fechaMomento; }
+    public int getId() {
+        return id;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public Emocion getEmocion() {
+        return emocion;
+    }
+
+    public LocalDate getFechaMomento() {
+        return fechaMomento;
+    }
+
+    @Override
+    public String toString() {
+        return "Título: " + titulo + ", Emoción: " + emocion + ", Fecha: " + fechaMomento;
+    }
 }
-
-
-
-
-
-
-
-
-
