@@ -9,14 +9,10 @@ public class MyDiarioApp {
     private static ConsoleView view = new ConsoleView();
 
     public static void main(String[] args) {
-      
-       
-diarioServicio.agregarMomento(new Momento("Cumpleaños"));
- 
+
+        diarioServicio.agregarMomento(new Momento("Cumpleaños"));
+
         view.mostrarMensaje("Listado de momentos vividos:");
         view.mostrarMomentos(diarioServicio.obtenerTodosLosMomentos());
     }
 }
-
-
-

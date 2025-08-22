@@ -13,8 +13,8 @@ public class ConsoleView {
             System.out.println(momento);
         }
     }
-     public void mostrarMensaje(String mensaje) {
+
+    public void mostrarMensaje(String mensaje) {
         System.out.println(mensaje);
     }
 }
-
