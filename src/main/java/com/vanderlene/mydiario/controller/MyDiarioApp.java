@@ -8,19 +8,14 @@ import com.vanderlene.mydiario.model.Momento;
 import com.vanderlene.mydiario.view.ConsoleView;
 
 public class MyDiarioApp {
-    private static DiarioServicio diarioServicio = new DiarioServicio();
     private static ConsoleView view = new ConsoleView();
+    private static DiarioServicio diarioServicio = new DiarioServicio();
 
     public static void main(String[] args) {
-        String titulo = view.leerTexto("Ingrese el título del momento: ");
-        String descripcion = view.leerTexto("Ingrese la descripción: ");
-        String emocionStr = view.leerTexto("Ingrese la emoción: ");
-        Emocion emocion = Emocion.valueOf(emocionStr.toUpperCase());
-        LocalDate fechaMomento = view.leerFecha("Ingrese la fecha (dd/MM/yyyy): ");
+        diarioServicio
+                .agregarMomento(new Momento("Cumpleaños", "", Emocion.ALEGRIA, LocalDate.now()));
+        view.mostrarMensaje("Listado de momentos vividos:");
+        view.mostrarMomentos(diarioServicio.obtenerTodosLosMomentos());
 
-        Momento momento = new Momento(titulo, descripcion, emocion, fechaMomento);
-        diarioServicio.agregarMomento(momento);
-
-        view.mostrarMensaje("Momento agregado correctamente.");
     }
 }
